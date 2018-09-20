@@ -39,7 +39,8 @@ def solution():
     # the REACH natural language processing web service. 
     # Specified the “fries” output format with the request.
     reach_url = 'http://agathon.sista.arizona.edu:8080/odinweb/api/text'
-    reach_out = requests.post(reach_url,data={'text':abstract,'output':'fries'}).json()
+    # The string 'abstract' should be quoted
+    reach_out = requests.post(reach_url,data={'text':'abstract','output':'fries'}).json()
 
     # Step 5: Saving the JSON result from the REACH web service into a file 
     # called <PMID>.json.
